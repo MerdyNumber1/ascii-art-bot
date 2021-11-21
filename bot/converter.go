@@ -70,12 +70,6 @@ func ConvertImageToAscii(image imglib.Image) string {
 		convertOptions.FixedWidth = int(float64(BASE_TEXT_WIDTH) * ratio)
 	}
 
-	log.Printf("image width: %d", bounds.Max.X)
-	log.Printf("image height: %d", bounds.Max.Y)
-	log.Printf("text width: %d", convertOptions.FixedWidth)
-	log.Printf("text height: %d", convertOptions.FixedHeight)
-	log.Printf("ratio: %e", ratio)
-
 	converter := convert.NewImageConverter()
 	asciiArt := converter.Image2ASCIIString(image, &convertOptions)
 	return asciiArt
